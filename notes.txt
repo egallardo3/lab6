@@ -1,0 +1,53 @@
+[10, 20, 30, 40 ,50]
+
+1) prompt the user for what number to delete 
+4 choices 10, 30, 50, 60 
+int target
+
+
+2) search the array for that number
+int index = 0;
+for(x = 0; x < length && myArray [x] != target; x++)
+  if(myArray[x] == target)
+    index = x;
+
+10 -> 0 
+30 -> 2
+50 -> 4 
+60 -> 5
+
+if(x == length)
+  print out not found 
+  return length
+
+
+
+int index = x;
+
+//myArray
+[10, 20, 30, 40, 50]
+  0.  1.  2.  3.  4  
+
+//temp 
+[10, 20, 40, 50]
+
+  if index == 0 then remove value at index 0 and shift everything down
+  if( index == 1, 2, 3, ) remove value at index 1, 2 or 4 and shift everything down
+  if index == 4 replace it with 0 
+
+int temp[MAX]
+for loop 0 to index 2 
+copy from the old myArray to temp
+temp[x] = myArray [x]
+
+int y = x; // 2
+for(y = x; y < length-1; y++)
+{
+  temp[x] = myArray[y+1];
+  x++;
+}
+
+put a zero in the last element 
+copy from temp back into myArray
+
+  return length - 1
